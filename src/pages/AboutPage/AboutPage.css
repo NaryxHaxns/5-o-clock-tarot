@@ -1,0 +1,18 @@
+.AboutPage {
+    margin: 0;
+    padding: 20px;
+    width: 50%;
+    color: aqua;
+}
+
+.AboutPage-link {
+    border: 1px solid aqua;
+    background-color: rgb(255,166,91);
+    color: rgb(17,4,69);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+
+}

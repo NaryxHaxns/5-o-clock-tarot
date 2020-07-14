@@ -46,6 +46,9 @@ export default class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route exact path='/about' render={() =>
+            <AboutPage />
+          } />
         </Switch>
       </div>
     );
