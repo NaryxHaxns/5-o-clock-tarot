@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import AboutPage from '../AboutPage/AboutPage';
 import userService from '../../utils/userService';
 
 export default class App extends Component {

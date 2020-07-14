@@ -6,7 +6,7 @@ const NavBar = (props) => {
     let nav = props.user ?
     <div>
         <span className='NavBar-welcome'>Welcome, {props.user.name}</span>
-        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link to='' onClick={props.handleLogout} className='NavBar-link'>Log Out</Link>
     </div>
     :
@@ -19,6 +19,12 @@ const NavBar = (props) => {
     return(
         <div className='NavBar'>
             {nav}
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <Link to='/about' className='NavPage-link'>History & About</Link>
+            <br/><br/><br/><br/><br/><br/>
+            <Link to='/about' className='NavPage-link'>Profile</Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link to='/about' className='NavPage-link'>Tarot Reading</Link>
         </div>
     );
 };

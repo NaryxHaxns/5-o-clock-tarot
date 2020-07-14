@@ -4,9 +4,20 @@
 }
 
 .NavBar-link {
+    background-color: rgb(255,166,91);
     border: 1px solid aqua;
-    color: white;
+    color: rgb(17,4,69);
     padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.NavPage-link {
+    background-color: rgb(200,52,120);
+    border: 1px solid aqua;
+    color: rgb(17,4,69);
+    padding: 25px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
