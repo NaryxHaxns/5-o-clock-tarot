@@ -27,10 +27,12 @@ export default class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <NavBar 
-            user={this.state.user}
-            handleLogout={this.handleLogout}
-          />
+          <Route exact path='/' render={() =>
+            <NavBar 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
+          } />
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage 
               history={history}
