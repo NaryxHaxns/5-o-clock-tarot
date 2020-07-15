@@ -16,7 +16,6 @@ function signup(user){
         body: JSON.stringify(user)
     })
     .then(res => {
-        console.log(user)
         if (res.ok) return res.json();
         throw new Error('Please try again');
     })

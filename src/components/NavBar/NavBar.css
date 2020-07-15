@@ -13,7 +13,7 @@
     display: inline-block;
 }
 
-.NavPage-link {
+.NavPage-AboutLink, .NavPage-ProfileLink, .NavPage-TarotLink {
     background-color: rgb(200,52,120);
     border: 1px solid aqua;
     color: rgb(17,4,69);
@@ -22,3 +22,12 @@
     text-decoration: none;
     display: inline-block;
 }
+
+.NavPage-AboutLink {
+    margin-top: 270px;
+}
+
+.NavPage-ProfileLink, .NavPage-TarotLink {
+    margin: 100px 25px 0;
+}
+

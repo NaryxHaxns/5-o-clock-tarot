@@ -18,12 +18,13 @@ const About = (props) => (
         <h3>Rider</h3>
         <p>
             Rider is the original publishing company for this
-            deck of tarot. Originally printed in 1909, this deck
-            is by far the most widely known and reprinted. It is
-            the basis of inspiration for many other decks to date.
-            Because of the publisher, author, and illustrator, the
-            deck is known by many combinations of their names:
-            Rider, Smith, and Waite.
+            deck of tarot and is a division of Penguin Random House.
+            Originally printed in 1909, this deck is by far the most
+            widely known and reprinted. It is the basis of
+            inspiration for many other decks to date. Because of
+            the publisher, author, and illustrator, the deck is
+            known by many combinations of their names: Rider, Smith,
+            and Waite.
         </p>
         <br/>
         <h3>Pamela Coleman Smith</h3>
