@@ -1,0 +1,55 @@
+.FiveCardLovePage {
+    margin: 0;
+    padding: 20px;
+    color: aqua;
+}
+
+.FiveCardLovePage-link {
+    border: 1px solid aqua;
+    background-color: rgb(255,166,91);
+    color: rgb(17,4,69);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+.cardLayout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "one . two"
+    "three . four"
+    ". five .";
+    justify-items: center;
+}    
+
+.tarotCard {
+    width: 125px;
+    height: 209px;
+    margin: 5px;
+    background-image: url(https://i.imgur.com/xrYYOeo.jpg);
+    background-size: cover;
+}

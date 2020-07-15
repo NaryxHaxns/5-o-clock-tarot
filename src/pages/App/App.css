@@ -2,6 +2,7 @@
   text-align: center;
   background-image: url(https://media.giphy.com/media/d2ZhOvMCq7tcTM0o/giphy.gif);
   background-size: cover;
+  overflow-y: scroll;
   height: 100vh;
   margin: 0;
   padding: 0;

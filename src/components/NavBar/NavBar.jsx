@@ -22,7 +22,7 @@ const NavBar = (props) => {
             <Link to='/about' className='NavPage-AboutLink'>History & About</Link>
             <br/>
             <Link to='/about' className='NavPage-ProfileLink'>Profile</Link>
-            <Link to='/about' className='NavPage-TarotLink'>Tarot Reading</Link>
+            <Link to='/tarot' className='NavPage-TarotLink'>Tarot Reading</Link>
         </div>
     );
 };

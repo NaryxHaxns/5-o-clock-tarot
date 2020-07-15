@@ -2,7 +2,7 @@ import React from 'react';
 import './AboutPage.css';
 import { Link } from 'react-router-dom';
 
-const About = (props) => (
+const About = () => (
     <div className='AboutPage'>
         <Link to='/' className='AboutPage-link'>Home</Link>
 
