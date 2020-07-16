@@ -60,8 +60,14 @@ export default class App extends Component {
   }
 
   handleCardFlip = (card) => {
-    console.log(card);
-    card.isFlipped = true;
+    let spreadCopy = this.state.spread;
+    let idx = spreadCopy.indexOf(card)
+    let cardCopy = spreadCopy.splice(idx, 1)
+    console.log(cardCopy)
+    cardCopy[0].isFlipped = true;
+    spreadCopy.splice(idx, 0, cardCopy[0])
+    console.log(spreadCopy)
+    this.setState({ spread: spreadCopy })
   }
 
   render() {
