@@ -46,15 +46,15 @@
     justify-items: center;
 }    
 
+.FiveCardLovePage-ReadingButton {
+    background-color: rgb(228,101,142);
+}
+
 .tarotCard {
     width: 125px;
     height: 209px;
     margin: 15px;
-    background-image: url(https://i.imgur.com/xrYYOeo.jpg);
     background-size: cover;
 }
 
-.FiveCardLovePage-ReadingButton {
-    background-color: rgb(228,101,142);
-}
 

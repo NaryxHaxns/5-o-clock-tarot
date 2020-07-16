@@ -45,12 +45,18 @@ const FiveCardLovePage = (props) => (
         <br />
         <div className='cardLayout'>
             {props.spread.map(function (card, idx) {
+                let cardImg = '';
+                if(card.isReversed){
+                    cardImg = card.imageReversed;
+                } else {
+                    cardImg = card.image;
+                }                
                 return (
                     <div id={`card_${idx + 1}`} key={`card_${idx + 1}`} onClick={() => props.handleCardFlip(card)}>
                         {card.isFlipped ?
-                            <div>test</div>
+                            <div className='tarotCard' style={{backgroundImage: `url(${cardImg})`}}></div>
                             :
-                            <div className='tarotCard'></div>
+                            <div className='tarotCard' style={{backgroundImage: `url("https://i.imgur.com/xrYYOeo.jpg")`}}></div>
                         }
                     </div>
                 )
