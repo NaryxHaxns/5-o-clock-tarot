@@ -1,6 +1,7 @@
 import React from 'react';
 import './FiveCardLovePage.css';
 import { Link } from 'react-router-dom';
+import ModalCard from '../../components/ModalCard/ModalCard'
 
 const FiveCardLovePage = (props) => (
     <div className='FiveCardLovePage'>
@@ -18,11 +19,11 @@ const FiveCardLovePage = (props) => (
                 CARD 2. Your future desire in the relationship.
             </p>
             <p>
-                CARD 3. What your partner brings to the 
+                CARD 3. What your partner brings to the
                 relationship.
             </p>
             <p>
-                CARD 4. Your partner's future desire in the 
+                CARD 4. Your partner's future desire in the
                 relationship.
             </p>
             <p>
@@ -41,28 +42,19 @@ const FiveCardLovePage = (props) => (
                 to reflect upon this reading on your profile page.
             </p>
         </div>
-        <br/>
+        <br />
         <div className='cardLayout'>
-            <div id='one'>
-                1
-                <p className='tarotCard'></p>
-            </div>
-            <div id='two'>
-                2
-                <p className='tarotCard'></p>
-            </div>
-            <div id ='three'>
-                3
-                <p className='tarotCard'></p>
-            </div>
-            <div id ='four'>
-                4
-                <p className='tarotCard'></p>
-            </div>
-            <div id ='five'>
-                5
-                <p className='tarotCard'></p>
-            </div>
+            {props.spread.map(function (card, idx) {
+                return (
+                    <div id={`card_${idx + 1}`} key={`card_${idx + 1}`} onClick={() => props.handleCardFlip(card)}>
+                        {card.isFlipped ?
+                            <div>test</div>
+                            :
+                            <div className='tarotCard'></div>
+                        }
+                    </div>
+                )
+            })}
         </div>
     </div>
 )

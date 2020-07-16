@@ -15,23 +15,23 @@
     font-size: 14px;
 }
 
-#one {
+#card_1 {
     grid-area: one;
 }
 
-#two {
+#card_2 {
     grid-area: two;
 }
 
-#three {
+#card_3 {
     grid-area: three;
 }
 
-#four {
+#card_4 {
     grid-area: four;
 }
 
-#five {
+#card_5 {
     grid-area: five;
 }
 
