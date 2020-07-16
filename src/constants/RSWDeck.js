@@ -858,3 +858,5 @@ const cards = [
         isReversed: false
     }
 ]
+
+export default cards;

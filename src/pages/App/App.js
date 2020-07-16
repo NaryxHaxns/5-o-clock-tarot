@@ -34,10 +34,16 @@ export default class App extends Component {
     return Math.floor(Math.random() * Math.floor(max));
   };
 
-  handleFiveCardLove = (i) => {
-    for(i=0; i<5; i++){
-      let rando = this.getCardOrReverse(deck.length + 1);
-      this.setState(this.state.spread.push(deck[rando]))
+  handleFiveCardLove = () => {
+    for(let i=0; i<5; i++){
+      let randidx = this.getCardOrReverse(deck.length + 1);
+      let randflip = this.getCardOrReverse(2)
+      let spreadCopy = this.state.spread;
+      let cardCopy = deck[randidx]
+      if(randflip){
+        cardCopy.isReversed = true;
+      }
+      this.setState({spread: spreadCopy.push(cardCopy)})
     }
     console.log(this.state.spread)
   }
