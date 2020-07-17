@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import userService from '../../utils/userService';
+import readingService from '../../utils/readingService';
 import cards from '../../constants/RSWDeck';
 import NavBar from '../../components/NavBar/NavBar';
 import SignupPage from '../SignupPage/SignupPage';
@@ -34,26 +35,47 @@ export default class App extends Component {
     return Math.floor(Math.random() * Math.floor(max));
   };
 
-  handleReadingSave = () => {
-
+  handleReadingSave = (readingCopy) => {
+    const newReading = {};
+    newReading.reading = readingCopy.map(card => {
+      if(card.isReversed){
+        return {
+          name: card.nameReversed,
+          arcana: card.arcana,
+          meaning: card.meaningReversed,
+          description: card.description,
+          image: card.imageReversed
+        }
+      }else{
+        return {
+          name: card.name,
+          arcana: card.arcana,
+          meaning: card.meaning,
+          description: card.description,
+          image: card.image
+        }
+      }
+    })
+    readingService.saveReading(newReading);
   }
 
   handleFiveCardLove = () => {
     const getReadingBtn = document.getElementById('FiveCardLovePage-ReadingButton')
     getReadingBtn.disabled = true;
     let readingCopy = this.state.reading;
-    let deckCopy = this.state.deck
+    let deckCopy = this.state.deck;
     for(let i=0; i<5; i++){
       let randidx = this.getCardOrReverse(deckCopy.length + 1);
-      let randflip = this.getCardOrReverse(2)
-      let cardCopy = deckCopy[randidx]
+      let randflip = this.getCardOrReverse(2);
+      let cardCopy = deckCopy[randidx];
       if(randflip){
         cardCopy.isReversed = true;
       }
       readingCopy.push(cardCopy);
       let removed = deckCopy.splice(randidx, 1);
     }
-    this.setState({reading: readingCopy})
+    this.handleReadingSave(readingCopy);
+    this.setState({reading: readingCopy});
     console.log(this.state.reading)
   }
 

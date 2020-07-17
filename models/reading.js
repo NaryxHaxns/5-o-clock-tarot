@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const readingSchema = new mongoose.Schema({
-    pastReadings: {
-        type: Array
-    },
+    reading: [{
+        name: String,
+        arcana: String,
+        meaning: String,
+        description: String,
+        image: String
+    }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
