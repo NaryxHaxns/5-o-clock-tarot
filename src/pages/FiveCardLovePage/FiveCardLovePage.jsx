@@ -31,7 +31,7 @@ const FiveCardLovePage = (props) => (
                 determines how long it may last and what you
                 can learn.
             </p>
-            <button className='FiveCardLovePage-ReadingButton' onClick={props.handleFiveCardLove}>Get your Reading</button>
+            <button id='FiveCardLovePage-ReadingButton' onClick={props.handleFiveCardLove}>Get your Reading</button>
             <p>
                 To begin, click Get your Reading above. You will
                 then be able to click a card one at a time to see
@@ -45,20 +45,32 @@ const FiveCardLovePage = (props) => (
         <br />
         <div className='cardLayout'>
             {props.spread.map(function (card, idx) {
+                const showHideClassName = card.show ? 'display-block' : 'display-none';
                 let cardImg = 'https://i.imgur.com/xrYYOeo.jpg';
-                if(card.isFlipped && card.isReversed){
+
+                if (card.isFlipped && card.isReversed) {
                     cardImg = card.imageReversed;
-                } else if(card.isFlipped){
+                } else if (card.isFlipped) {
                     cardImg = card.image;
                 }
+
                 return (
                     <div id={`card_${idx + 1}`} key={`card_${idx + 1}`} onClick={() => props.handleCardFlip(card)}>
-                        <div className='tarotCard' style={{backgroundImage: `url(${cardImg})`}}></div>
+                        {idx+1}
+                        <div className='tarotCard' style={{ backgroundImage: `url(${cardImg})` }}></div>
+                        <div className={showHideClassName}>
+                            <ModalCard
+                                card={card}
+                                showHideModal={props.showHideModal}
+                            />
+                        </div>
+                        <button onClick={() => props.showHideModal(card)}>Card Details</button>
                     </div>
                 )
             })}
         </div>
-    </div>
+</div>
 )
+
 
 export default FiveCardLovePage;

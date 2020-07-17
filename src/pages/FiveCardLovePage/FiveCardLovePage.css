@@ -46,7 +46,7 @@
     justify-items: center;
 }    
 
-.FiveCardLovePage-ReadingButton {
+#FiveCardLovePage-ReadingButton {
     background-color: rgb(228,101,142);
 }
 
@@ -57,4 +57,21 @@
     background-size: cover;
 }
 
+.display-block {
+    display: block;
+}
 
+.display-none {
+    display: none;
+}
+
+.modal-main {
+    position:fixed;
+    background: rgba(17, 4, 69, 0.6);
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    overflow-y: scroll;
+}

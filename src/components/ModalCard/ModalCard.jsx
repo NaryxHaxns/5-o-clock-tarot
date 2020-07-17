@@ -1,34 +1,31 @@
 import React from 'react';
 import './ModalCard.css';
 
-const ModalCard = ({ props, handleClose }) => {
-    const showHideClassName = props.show ? 'modal display-block' : 'modal display-none';
+const ModalCard = ({ showHideModal, card }) => {
+    let cardView = card.isReversed ?
+    <div>
+        <h3>{card.nameReversed}</h3>
+        <p>{card.arcana}</p>
+        <img src={card.imageReversed} alt="Card Image" className='modalCardImg'/>
+        <p>{card.meaningReversed}</p>
+        <p>{card.description}</p>
+    </div>
+    :
+    <div>
+        <h3>{card.name}</h3>
+        <p>{card.arcana}</p>
+        <img src={card.image} alt="Card Image" className='modalCardImg'/>
+        <p>{card.meaning}</p>
+        <p>{card.description}</p>
+    </div>;
     
-    let cardView = props.card.isReversed ?
-        <div className={showHideClassName}>
-            <section className='modal-main'>
-            <h3>{props.card.nameReversed}</h3>
-            <p>{props.card.arcana}</p>
-            <img src={props.card.imageReversed} alt="Card Image"/>
-            <p>{props.card.meaningReversed}</p>
-            <p>{props.card.description}</p>
-            </section>
-            <button onClick={handleClose}>Close</button>
-        </div>
-        :
-        <div className={showHideClassName}>
-            <section className='modal-main'>
-            <h3>{props.card.name}</h3>
-            <p>{props.card.arcana}</p>
-            <img src={props.card.image} alt="Card Image"/>
-            <p>{props.card.meaning}</p>
-            <p>{props.card.description}</p>
-            </section>
-            <button onClick={handleClose}>Close</button>
-        </div>;
-
     return(
-        {cardView}
+        <div>
+            <section className='modal-main'>
+                {cardView}
+                <button onClick={() => showHideModal(card)}>Close</button>
+            </section>
+        </div>
     )
 }
 

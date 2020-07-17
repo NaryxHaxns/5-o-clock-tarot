@@ -17,7 +17,6 @@ export default class App extends Component {
       user: userService.getUser(),
       deck: cards,
       spread: [],
-      show: false
     };
   };
 
@@ -35,6 +34,8 @@ export default class App extends Component {
   };
 
   handleFiveCardLove = () => {
+    const getReadingBtn = document.getElementById('FiveCardLovePage-ReadingButton')
+    getReadingBtn.disabled = true;
     let spreadCopy = this.state.spread;
     let deckCopy = this.state.deck
     for(let i=0; i<5; i++){
@@ -51,22 +52,25 @@ export default class App extends Component {
     console.log(this.state.spread)
   }
 
-  showModal = () => {
-    this.setState({ show: true })
-  }
-
-  hideModal = () => {
-    this.setState({ show: false })
+  showHideModal = (card) => {
+    let spreadCopy = this.state.spread;
+    let idx = spreadCopy.indexOf(card);
+    let cardCopy = spreadCopy.splice(idx, 1);
+    if(card.show === true){
+      cardCopy[0].show = false;
+    } else if(card.show === false){
+      cardCopy[0].show = true;
+    }
+    spreadCopy.splice(idx, 0, cardCopy[0])
+    this.setState({ spread: spreadCopy })
   }
 
   handleCardFlip = (card) => {
     let spreadCopy = this.state.spread;
-    let idx = spreadCopy.indexOf(card)
-    let cardCopy = spreadCopy.splice(idx, 1)
-    console.log(cardCopy)
+    let idx = spreadCopy.indexOf(card);
+    let cardCopy = spreadCopy.splice(idx, 1);
     cardCopy[0].isFlipped = true;
     spreadCopy.splice(idx, 0, cardCopy[0])
-    console.log(spreadCopy)
     this.setState({ spread: spreadCopy })
   }
 
@@ -102,8 +106,7 @@ export default class App extends Component {
             <FiveCardLovePage 
               {...props}
               handleFiveCardLove={this.handleFiveCardLove}
-              showModal={this.showModal}
-              hideModal={this.hideModal}
+              showHideModal={this.showHideModal}
               handleCardFlip={this.handleCardFlip}
               spread={this.state.spread}
             />

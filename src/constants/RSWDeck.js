@@ -9,7 +9,8 @@ const cards = [
         image: "https://i.imgur.com/Mi6xkuM.jpg",
         imageReversed: "https://i.imgur.com/ArGUoUA.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Magician",
@@ -21,7 +22,8 @@ const cards = [
         image: "https://i.imgur.com/YFGvLgj.jpg",
         imageReversed: "https://i.imgur.com/jRXIeQe.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The High Priestess",
@@ -33,7 +35,8 @@ const cards = [
         image: "https://i.imgur.com/9vrPLQi.jpg",
         imageReversed: "https://i.imgur.com/kDbVoiz.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Empress",
@@ -45,7 +48,8 @@ const cards = [
         image: "https://i.imgur.com/MY7kVhT.jpg",
         imageReversed: "https://i.imgur.com/QjyTNEm.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Emperor",
@@ -57,7 +61,8 @@ const cards = [
         image: "https://i.imgur.com/4do1J6d.jpg",
         imageReversed: "https://i.imgur.com/eVkthGs.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Heirophant",
@@ -69,7 +74,8 @@ const cards = [
         image: "https://i.imgur.com/pygK55I.jpg",
         imageReversed: "https://i.imgur.com/e2Hug5v.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Lovers",
@@ -81,7 +87,8 @@ const cards = [
         image: "https://i.imgur.com/A228MNI.jpg",
         imageReversed: "https://i.imgur.com/wfR1Wiq.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Chariot",
@@ -93,7 +100,8 @@ const cards = [
         image: "https://i.imgur.com/8G2g9l5.jpg",
         imageReversed: "https://i.imgur.com/lnanNaG.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Strength",
@@ -105,7 +113,8 @@ const cards = [
         image: "https://i.imgur.com/SX8Nvlf.jpg",
         imageReversed: "https://i.imgur.com/ptrAN8R.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Hermit",
@@ -117,7 +126,8 @@ const cards = [
         image: "https://i.imgur.com/p7vUoWT.jpg",
         imageReversed: "https://i.imgur.com/uBOxdwW.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Wheel of Fortune",
@@ -129,7 +139,8 @@ const cards = [
         image: "https://i.imgur.com/4TXanbc.jpg",
         imageReversed: "https://i.imgur.com/lmSYSzQ.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Justice",
@@ -141,7 +152,8 @@ const cards = [
         image: "https://i.imgur.com/wwJgMrM.jpg",
         imageReversed: "https://i.imgur.com/QNe6I94.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Hanged Man",
@@ -153,7 +165,8 @@ const cards = [
         image: "https://i.imgur.com/1oEYaaQ.jpg",
         imageReversed: "https://i.imgur.com/n08G15v.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Death",
@@ -165,7 +178,8 @@ const cards = [
         image: "https://i.imgur.com/uqNfai0.jpg",
         imageReversed: "https://i.imgur.com/dIPKdav.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Temperance",
@@ -177,7 +191,8 @@ const cards = [
         image: "https://i.imgur.com/M8yRrVE.jpg",
         imageReversed: "https://i.imgur.com/aEvenqs.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Devil",
@@ -189,7 +204,8 @@ const cards = [
         image: "https://i.imgur.com/nAgmnVZ.jpg",
         imageReversed: "https://i.imgur.com/20XU9cV.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Tower",
@@ -201,7 +217,8 @@ const cards = [
         image: "https://i.imgur.com/rzm0WjV.jpg",
         imageReversed: "https://i.imgur.com/bpIvc2s.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Star",
@@ -213,7 +230,8 @@ const cards = [
         image: "https://i.imgur.com/OAGIFvm.jpg",
         imageReversed: "https://i.imgur.com/1MAyaAu.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Moon",
@@ -225,7 +243,8 @@ const cards = [
         image: "https://i.imgur.com/M1QHmpk.jpg",
         imageReversed: "https://i.imgur.com/GuCnq01.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The Sun",
@@ -237,7 +256,8 @@ const cards = [
         image: "https://i.imgur.com/gvk43kn.jpg",
         imageReversed: "https://i.imgur.com/1XPXJ0n.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Judgement",
@@ -249,7 +269,8 @@ const cards = [
         image: "https://i.imgur.com/RBoNIse.jpg",
         imageReversed: "https://i.imgur.com/l581Ffi.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "The World",
@@ -261,7 +282,8 @@ const cards = [
         image: "https://i.imgur.com/CfOBGFd.jpg",
         imageReversed: "https://i.imgur.com/HKZWu6A.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ace of Wands",
@@ -273,7 +295,8 @@ const cards = [
         image: "https://i.imgur.com/FaXxo4k.jpg",
         imageReversed: "https://i.imgur.com/JCyNb5a.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Two of Wands",
@@ -285,7 +308,8 @@ const cards = [
         image: "https://i.imgur.com/6Cpco35.jpg",
         imageReversed: "https://i.imgur.com/CmIGpV5.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Three of Wands",
@@ -297,7 +321,8 @@ const cards = [
         image: "https://i.imgur.com/pOP9H22.jpg",
         imageReversed: "https://i.imgur.com/BPfADyW.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Four of Wands",
@@ -309,7 +334,8 @@ const cards = [
         image: "https://i.imgur.com/gyq5mjH.jpg",
         imageReversed: "https://i.imgur.com/k56Uc6W.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Five of Wands",
@@ -321,7 +347,8 @@ const cards = [
         image: "https://i.imgur.com/jabDmS3.jpg",
         imageReversed: "https://i.imgur.com/DOFNIVO.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Six of Wands",
@@ -333,7 +360,8 @@ const cards = [
         image: "https://i.imgur.com/vSCswZp.jpg",
         imageReversed: "https://i.imgur.com/8zHgbNY.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Seven of Wands",
@@ -345,7 +373,8 @@ const cards = [
         image: "https://i.imgur.com/GDrfNPS.jpg",
         imageReversed: "https://i.imgur.com/owOLIQL.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Eight of Wands",
@@ -357,7 +386,8 @@ const cards = [
         image: "https://i.imgur.com/FDBZcEP.jpg",
         imageReversed: "https://i.imgur.com/maxPBhe.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Nine of Wands",
@@ -369,7 +399,8 @@ const cards = [
         image: "https://i.imgur.com/YMCsMrH.jpg",
         imageReversed: "https://i.imgur.com/PPTq51O.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ten of Wands",
@@ -381,7 +412,8 @@ const cards = [
         image: "https://i.imgur.com/NLPuLpF.jpg",
         imageReversed: "https://i.imgur.com/GG70vHw.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Page of Wands",
@@ -393,7 +425,8 @@ const cards = [
         image: "https://i.imgur.com/u91Lej2.jpg",
         imageReversed: "https://i.imgur.com/WCJ0JDF.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Knight of Wands",
@@ -405,7 +438,8 @@ const cards = [
         image: "https://i.imgur.com/TB2T0rS.jpg",
         imageReversed: "https://i.imgur.com/lhCugRw.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Queen of Wands",
@@ -417,7 +451,8 @@ const cards = [
         image: "https://i.imgur.com/18K57Of.jpg",
         imageReversed: "https://i.imgur.com/f4gP9Xv.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "King of Wands",
@@ -429,7 +464,8 @@ const cards = [
         image: "https://i.imgur.com/SleO39E.jpg",
         imageReversed: "https://i.imgur.com/6NESKL6.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ace of Pentacles",
@@ -441,7 +477,8 @@ const cards = [
         image: "https://i.imgur.com/ZCVyK2g.jpg",
         imageReversed: "https://i.imgur.com/lafG6e5.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Two of Pentacles",
@@ -453,7 +490,8 @@ const cards = [
         image: "https://i.imgur.com/UgkJHzQ.jpg",
         imageReversed: "https://i.imgur.com/KeXwwkj.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Three of Pentacles",
@@ -465,7 +503,8 @@ const cards = [
         image: "https://i.imgur.com/u0jSQXW.jpg",
         imageReversed: "https://i.imgur.com/ccwfNHy.jpg?2",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Four of Pentacles",
@@ -477,7 +516,8 @@ const cards = [
         image: "https://i.imgur.com/86dU7oQ.jpg",
         imageReversed: "https://i.imgur.com/L43agsM.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Five of Pentacles",
@@ -489,7 +529,8 @@ const cards = [
         image: "https://i.imgur.com/dahv4mP.jpg",
         imageReversed: "https://i.imgur.com/CEEGGpt.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Six of Pentacles",
@@ -501,7 +542,8 @@ const cards = [
         image: "https://i.imgur.com/2A6CUPt.jpg",
         imageReversed: "https://i.imgur.com/zP4KCzr.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Seven of Pentacles",
@@ -513,7 +555,8 @@ const cards = [
         image: "https://i.imgur.com/nR5Dv4m.jpg",
         imageReversed: "https://i.imgur.com/TSlTZcq.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Eight of Pentacles",
@@ -525,7 +568,8 @@ const cards = [
         image: "https://i.imgur.com/3Nf5cpE.jpg",
         imageReversed: "https://i.imgur.com/3mS6k6x.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Nine of Pentacles",
@@ -537,7 +581,8 @@ const cards = [
         image: "https://i.imgur.com/dYlUShY.jpg",
         imageReversed: "https://i.imgur.com/iWLtxh4.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ten of Pentacles",
@@ -549,7 +594,8 @@ const cards = [
         image: "https://i.imgur.com/mAP7YMi.jpg",
         imageReversed: "https://i.imgur.com/vV1vx4L.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Page of Pentacles",
@@ -561,7 +607,8 @@ const cards = [
         image: "https://i.imgur.com/NIqJIlk.jpg",
         imageReversed: "https://i.imgur.com/MPTYlOG.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Knight of Pentacles",
@@ -573,7 +620,8 @@ const cards = [
         image: "https://i.imgur.com/IGd9RDL.jpg",
         imageReversed: "https://i.imgur.com/mgkuGdA.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Queen of Pentacles",
@@ -585,7 +633,8 @@ const cards = [
         image: "https://i.imgur.com/uiI2YZq.jpg",
         imageReversed: "https://i.imgur.com/X6YSEN3.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "King of Pentacles",
@@ -597,7 +646,8 @@ const cards = [
         image: "https://i.imgur.com/haZXRrW.jpg",
         imageReversed: "https://i.imgur.com/OXWRdHh.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ace of Cups",
@@ -609,7 +659,8 @@ const cards = [
         image: "https://i.imgur.com/LxnOqAK.jpg",
         imageReversed: "https://i.imgur.com/pm2T97M.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Two of Cups",
@@ -621,7 +672,8 @@ const cards = [
         image: "https://i.imgur.com/MyQyOil.jpg",
         imageReversed: "https://i.imgur.com/mXqg42n.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Three of Cups",
@@ -633,7 +685,8 @@ const cards = [
         image: "https://i.imgur.com/UlVZSmZ.jpg",
         imageReversed: "https://i.imgur.com/KHK0gVb.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Four of Cups",
@@ -645,7 +698,8 @@ const cards = [
         image: "https://i.imgur.com/OOtOZLy.jpg",
         imageReversed: "https://i.imgur.com/nUHir0h.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Five of Cups",
@@ -657,7 +711,8 @@ const cards = [
         image: "https://i.imgur.com/GcrefxY.jpg",
         imageReversed: "https://i.imgur.com/PdhAfAn.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Six of Cups",
@@ -669,7 +724,8 @@ const cards = [
         image: "https://i.imgur.com/lRGvhF4.jpg",
         imageReversed: "https://i.imgur.com/mDeFgQN.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Seven of Cups",
@@ -681,7 +737,8 @@ const cards = [
         image: "https://i.imgur.com/3E1Z7MS.jpg",
         imageReversed: "https://i.imgur.com/8McVoed.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Eight of Cups",
@@ -693,7 +750,8 @@ const cards = [
         image: "https://i.imgur.com/y09S5TE.jpg",
         imageReversed: "https://i.imgur.com/KR54bBW.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Nine of Cups",
@@ -705,7 +763,8 @@ const cards = [
         image: "https://i.imgur.com/vAyuSnu.jpg",
         imageReversed: "https://i.imgur.com/qq8FXyZ.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ten of Cups",
@@ -717,7 +776,8 @@ const cards = [
         image: "https://i.imgur.com/8u8Iw3z.jpg",
         imageReversed: "https://i.imgur.com/niVwRT4.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Page of Cups",
@@ -729,7 +789,8 @@ const cards = [
         image: "https://i.imgur.com/8OOgiGj.jpg",
         imageReversed: "https://i.imgur.com/1iK3NL7.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Knight of Cups",
@@ -741,7 +802,8 @@ const cards = [
         image: "https://i.imgur.com/CqvORfB.jpg",
         imageReversed: "https://i.imgur.com/plR47Rs.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Queen of Cups",
@@ -753,7 +815,8 @@ const cards = [
         image: "https://i.imgur.com/NsfoGmm.jpg",
         imageReversed: "https://i.imgur.com/BkNTAGg.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "King of Cups",
@@ -765,7 +828,8 @@ const cards = [
         image: "https://i.imgur.com/RGG863e.jpg",
         imageReversed: "https://i.imgur.com/uHV5Am7.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ace of Swords",
@@ -777,7 +841,8 @@ const cards = [
         image: "https://i.imgur.com/qxaX5Yg.jpg",
         imageReversed: "https://i.imgur.com/Dkh7kjM.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Two of Swords",
@@ -789,7 +854,8 @@ const cards = [
         image: "https://i.imgur.com/fjWDFwZ.jpg",
         imageReversed: "https://i.imgur.com/VOyjj0Z.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Three of Swords",
@@ -801,7 +867,8 @@ const cards = [
         image: "https://i.imgur.com/VRihkYb.jpg",
         imageReversed: "https://i.imgur.com/V1qYI9L.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Four of Swords",
@@ -813,7 +880,8 @@ const cards = [
         image: "https://i.imgur.com/6WEcUbi.jpg",
         imageReversed: "https://i.imgur.com/m2CyXZN.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Five of Swords",
@@ -825,7 +893,8 @@ const cards = [
         image: "https://i.imgur.com/0aJ8rTi.jpg",
         imageReversed: "https://i.imgur.com/Ll9wU7H.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Six of Swords",
@@ -837,7 +906,8 @@ const cards = [
         image: "https://i.imgur.com/NU8IGj4.jpg",
         imageReversed: "https://i.imgur.com/zB4yEKU.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Seven of Swords",
@@ -849,7 +919,8 @@ const cards = [
         image: "https://i.imgur.com/LipYjIP.jpg",
         imageReversed: "https://i.imgur.com/k7pEc1M.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Eight of Swords",
@@ -861,7 +932,8 @@ const cards = [
         image: "https://i.imgur.com/BvhIavo.jpg",
         imageReversed: "https://i.imgur.com/6hlcqUm.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Nine of Swords",
@@ -873,7 +945,8 @@ const cards = [
         image: "https://i.imgur.com/1b8Mbtn.jpg",
         imageReversed: "https://i.imgur.com/gABNZHC.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Ten of Swords",
@@ -885,7 +958,8 @@ const cards = [
         image: "https://i.imgur.com/b1ke1I6.jpg?2",
         imageReversed: "https://i.imgur.com/uk6u2Lu.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Page of Swords",
@@ -897,7 +971,8 @@ const cards = [
         image: "https://i.imgur.com/JL70orl.jpg",
         imageReversed: "https://i.imgur.com/rszQTvO.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Knight of Swords",
@@ -909,7 +984,8 @@ const cards = [
         image: "https://i.imgur.com/eQSJBar.jpg",
         imageReversed: "https://i.imgur.com/GpMoae5.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "Queen of Swords",
@@ -921,7 +997,8 @@ const cards = [
         image: "https://i.imgur.com/oFYPFDx.jpg",
         imageReversed: "https://i.imgur.com/wyHhwz1.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     },
     {
         name: "King of Swords",
@@ -933,7 +1010,8 @@ const cards = [
         image: "https://i.imgur.com/ug6j7S6.jpg",
         imageReversed: "https://i.imgur.com/ukkfjjV.jpg?1",
         isReversed: false,
-        isFlipped: false
+        isFlipped: false,
+        show: false
     }
 ]
 
