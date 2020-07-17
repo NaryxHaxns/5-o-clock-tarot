@@ -6,6 +6,8 @@ import ModalCard from '../../components/ModalCard/ModalCard'
 const FiveCardLovePage = (props) => (
     <div className='FiveCardLovePage'>
         <Link to='/' className='FiveCardLovePage-link'>Home</Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <Link to='/profile' className='FiveCardLovePage-link'>Profile</Link>
         <h1>5-Card Love Spread</h1>
         <div>
             <p>
@@ -44,7 +46,7 @@ const FiveCardLovePage = (props) => (
         </div>
         <br />
         <div className='cardLayout'>
-            {props.spread.map(function (card, idx) {
+            {props.reading.map(function (card, idx) {
                 const showHideClassName = card.show ? 'display-block' : 'display-none';
                 let cardImg = 'https://i.imgur.com/xrYYOeo.jpg';
 

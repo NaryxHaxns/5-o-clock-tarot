@@ -9,6 +9,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import AboutPage from '../AboutPage/AboutPage';
 import TarotPage from '../TarotPage/TarotPage';
 import FiveCardLovePage from '../FiveCardLovePage/FiveCardLovePage';
+import UserPage from '../UserPage/UserPage';
 
 export default class App extends Component {
   constructor(){
@@ -16,7 +17,7 @@ export default class App extends Component {
     this.state = {
       user: userService.getUser(),
       deck: cards,
-      spread: [],
+      reading: [],
     };
   };
 
@@ -33,10 +34,14 @@ export default class App extends Component {
     return Math.floor(Math.random() * Math.floor(max));
   };
 
+  handleReadingSave = () => {
+
+  }
+
   handleFiveCardLove = () => {
     const getReadingBtn = document.getElementById('FiveCardLovePage-ReadingButton')
     getReadingBtn.disabled = true;
-    let spreadCopy = this.state.spread;
+    let readingCopy = this.state.reading;
     let deckCopy = this.state.deck
     for(let i=0; i<5; i++){
       let randidx = this.getCardOrReverse(deckCopy.length + 1);
@@ -45,33 +50,33 @@ export default class App extends Component {
       if(randflip){
         cardCopy.isReversed = true;
       }
-      spreadCopy.push(cardCopy);
+      readingCopy.push(cardCopy);
       let removed = deckCopy.splice(randidx, 1);
     }
-    this.setState({spread: spreadCopy})
-    console.log(this.state.spread)
+    this.setState({reading: readingCopy})
+    console.log(this.state.reading)
   }
 
   showHideModal = (card) => {
-    let spreadCopy = this.state.spread;
-    let idx = spreadCopy.indexOf(card);
-    let cardCopy = spreadCopy.splice(idx, 1);
+    let readingCopy = this.state.reading;
+    let idx = readingCopy.indexOf(card);
+    let cardCopy = readingCopy.splice(idx, 1);
     if(card.show === true){
       cardCopy[0].show = false;
     } else if(card.show === false){
       cardCopy[0].show = true;
     }
-    spreadCopy.splice(idx, 0, cardCopy[0])
-    this.setState({ spread: spreadCopy })
+    readingCopy.splice(idx, 0, cardCopy[0])
+    this.setState({ reading: readingCopy })
   }
 
   handleCardFlip = (card) => {
-    let spreadCopy = this.state.spread;
-    let idx = spreadCopy.indexOf(card);
-    let cardCopy = spreadCopy.splice(idx, 1);
+    let readingCopy = this.state.reading;
+    let idx = readingCopy.indexOf(card);
+    let cardCopy = readingCopy.splice(idx, 1);
     cardCopy[0].isFlipped = true;
-    spreadCopy.splice(idx, 0, cardCopy[0])
-    this.setState({ spread: spreadCopy })
+    readingCopy.splice(idx, 0, cardCopy[0])
+    this.setState({ reading: readingCopy })
   }
 
   render() {
@@ -108,7 +113,12 @@ export default class App extends Component {
               handleFiveCardLove={this.handleFiveCardLove}
               showHideModal={this.showHideModal}
               handleCardFlip={this.handleCardFlip}
-              spread={this.state.spread}
+              reading={this.state.reading}
+            />
+          } />
+          <Route exact path='/profile' render={() =>
+            <UserPage 
+              user={this.state.user}
             />
           } />
         </Switch>
