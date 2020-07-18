@@ -6,7 +6,8 @@ const readingSchema = new mongoose.Schema({
         arcana: String,
         meaning: String,
         description: String,
-        image: String
+        image: String,
+        show: true
     }],
     user: {
         type: mongoose.Schema.Types.ObjectId,

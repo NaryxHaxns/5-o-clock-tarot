@@ -41,14 +41,14 @@ export default class App extends Component {
     const newReading = {};
 
     newReading.reading = readingCopy.map(card => {
-      card.isFlipped = true;
       if(card.isReversed){
         return {
           name: card.nameReversed,
           arcana: card.arcana,
           meaning: card.meaningReversed,
           description: card.description,
-          image: card.imageReversed
+          image: card.imageReversed,
+          show: true
         }
       }else{
         return {
@@ -56,7 +56,8 @@ export default class App extends Component {
           arcana: card.arcana,
           meaning: card.meaning,
           description: card.description,
-          image: card.image
+          image: card.image,
+          show: true
         }
       }
     })

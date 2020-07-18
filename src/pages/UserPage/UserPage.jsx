@@ -8,7 +8,7 @@ const UserPage = (props) => {
                 <div id={idx + 1} key={idx + 1}>
                 {reading.createdAt}
                 &nbsp;&nbsp;|&nbsp;&nbsp;
-                <Link to={`/profile/${props.prevReadings[idx]._id}`} className='ProfilePage-PastReadingLink'>Reading Detail</Link>
+                <Link to={`/profile/readingdetail/${props.prevReadings[idx]._id}`} className='ProfilePage-PastReadingLink'>Reading Detail</Link>
                 </div>
             )
         })
