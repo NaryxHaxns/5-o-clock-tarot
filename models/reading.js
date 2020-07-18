@@ -7,7 +7,7 @@ const readingSchema = new mongoose.Schema({
         meaning: String,
         description: String,
         image: String,
-        show: true
+        show: Boolean
     }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
