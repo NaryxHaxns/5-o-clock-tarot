@@ -1,7 +1,8 @@
 const BASE_URL = '/api/readings/';
 
 export default {
-    saveReading
+    saveReading,
+    userIndex
 }
 
 function saveReading(newReading){
@@ -15,4 +16,9 @@ function saveReading(newReading){
         throw new Error('Please try again');
     })
     .then((data) => console.log(data));
+}
+
+function userIndex(userId){
+    console.log('hitting UserIndex serviceworker', userId)
+    return fetch(BASE_URL + 'userIndex/' + userId).then(res => res.json());
 }

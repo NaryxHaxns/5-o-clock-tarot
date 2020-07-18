@@ -37,6 +37,7 @@ export default class App extends Component {
 
   handleReadingSave = (readingCopy) => {
     const newReading = {};
+
     newReading.reading = readingCopy.map(card => {
       if(card.isReversed){
         return {
@@ -56,6 +57,7 @@ export default class App extends Component {
         }
       }
     })
+    newReading.user = this.state.user._id;
     readingService.saveReading(newReading);
   }
 

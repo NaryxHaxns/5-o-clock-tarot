@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './UserPage.css';
 import { Link } from 'react-router-dom';
+import readingsService from '../../utils/readingService';
+import userService from '../../utils/userService';
 
-const UserPage = (props) => (
-    <div className='UserPage'>
-        <Link to='/' className='FiveCardLovePage-link'>Home</Link>
-        <br/>
-        <h1>{props.user.name}</h1>
-        <h3>Past Readings:</h3>
-        <div className='pastReading-list'>
-            
-        </div>
-    </div>
-)
+export default class UserPage extends Component {
+    state = {
+        prevReadings: [],
+        user: userService.getUser()
+    }
 
-export default UserPage;
+    async componentDidMount(){
+        let userId = this.state.user._id;
+        const prevReadings = await readingsService.userIndex(userId);
+        console.log('this is prev readings------------', prevReadings)
+        this.setState({ prevReadings: prevReadings })
+    }
+
+    render() {
+        const readingDetailBtns = this.state.prevReadings.map(function (reading, idx) {
+            return(
+            <div className='pastReading-list' id={idx + 1} key={idx + 1}>
+                {reading.createdAt}
+                <button>Reading Detail</button>
+            </div>
+            )
+        })
+        
+        return (
+            <div className='UserPage'>
+                <Link to='/' className='FiveCardLovePage-link'>Home</Link>
+                <br />
+                <h1>{this.state.user.name}</h1>
+                <h3>Past Readings:</h3>
+                {readingDetailBtns}
+            </div>
+        )
+    }
+}
