@@ -48,7 +48,7 @@ const ReadingDetailPage = (props) => (
             {props.reading.map(function (card, idx) {
                 const showHideClassName = card.show ? 'display-block' : 'display-none';
                 let cardImg = 'https://i.imgur.com/xrYYOeo.jpg';
-                card.isFlipped = true;
+
                 if (card.isFlipped && card.isReversed) {
                     cardImg = card.imageReversed;
                 } else if (card.isFlipped) {

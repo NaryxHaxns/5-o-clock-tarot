@@ -12,3 +12,7 @@
     text-decoration: none;
     display: inline-block;
 }
+
+.PastReading-list {
+    margin: 20px;
+}

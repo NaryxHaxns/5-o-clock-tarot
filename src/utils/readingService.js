@@ -19,6 +19,5 @@ function saveReading(newReading){
 }
 
 function userIndex(userId){
-    console.log('hitting UserIndex serviceworker', userId)
     return fetch(BASE_URL + 'userIndex/' + userId).then(res => res.json());
 }

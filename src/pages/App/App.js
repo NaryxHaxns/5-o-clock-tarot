@@ -20,6 +20,7 @@ export default class App extends Component {
       user: userService.getUser(),
       deck: cards,
       reading: [],
+      prevReadings: []
     };
   };
 
@@ -40,6 +41,7 @@ export default class App extends Component {
     const newReading = {};
 
     newReading.reading = readingCopy.map(card => {
+      card.isFlipped = true;
       if(card.isReversed){
         return {
           name: card.nameReversed,
@@ -104,6 +106,12 @@ export default class App extends Component {
     this.setState({ reading: readingCopy })
   }
 
+  async componentDidMount(){
+    let userId = this.state.user._id;
+    const prevReadings = await readingService.userIndex(userId);
+    this.setState({ prevReadings: prevReadings })
+  }
+
   render() {
     return (
       <div className="App">
@@ -144,13 +152,15 @@ export default class App extends Component {
           <Route exact path='/profile' render={() =>
             <UserPage 
               user={this.state.user}
+              prevReadings={this.state.prevReadings}
             />
           } />
-          <Route exact path='/profile/readingdetail' render={props =>
+          <Route exact path='/profile/readingdetail/:id' render={() =>
             <ReadingDetailPage 
               showHideModal={this.showHideModal}
               handleCardFlip={this.handleCardFlip}
               reading={this.state.reading}
+              prevReadings={this.state.prevReadings}
             />
           } />
         </Switch>
