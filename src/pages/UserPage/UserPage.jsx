@@ -20,9 +20,13 @@ export default class UserPage extends Component {
     render() {
         const readingDetailBtns = this.state.prevReadings.map(function (reading, idx) {
             return(
-            <div className='pastReading-list' id={idx + 1} key={idx + 1}>
+            <div className='pastReading-list'>
+                <div id={idx + 1} key={idx + 1}>
                 {reading.createdAt}
-                <button>Reading Detail</button>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <Link to='/profile/readingdetail' className='ProfilePage-PastReadingLink'>Reading Detail</Link>
+                </div>
+                <br/>
             </div>
             )
         })

@@ -11,6 +11,7 @@ import AboutPage from '../AboutPage/AboutPage';
 import TarotPage from '../TarotPage/TarotPage';
 import FiveCardLovePage from '../FiveCardLovePage/FiveCardLovePage';
 import UserPage from '../UserPage/UserPage';
+import ReadingDetailPage from '../ReadingDetailPage/ReadingDetailPage';
 
 export default class App extends Component {
   constructor(){
@@ -143,6 +144,13 @@ export default class App extends Component {
           <Route exact path='/profile' render={() =>
             <UserPage 
               user={this.state.user}
+            />
+          } />
+          <Route exact path='/profile/readingdetail' render={props =>
+            <ReadingDetailPage 
+              showHideModal={this.showHideModal}
+              handleCardFlip={this.handleCardFlip}
+              reading={this.state.reading}
             />
           } />
         </Switch>
