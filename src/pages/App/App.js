@@ -14,7 +14,7 @@ import UserPage from '../UserPage/UserPage';
 import ReadingDetailPage from '../ReadingDetailPage/ReadingDetailPage';
 
 export default class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       user: userService.getUser(),
@@ -25,15 +25,15 @@ export default class App extends Component {
   };
 
   handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+    this.setState({ user: userService.getUser() });
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null});
+    this.setState({ user: null });
   };
 
-  getCardOrReverse(max){
+  getCardOrReverse(max) {
     return Math.floor(Math.random() * Math.floor(max));
   };
 
@@ -41,7 +41,7 @@ export default class App extends Component {
     const newReading = {};
 
     newReading.reading = readingCopy.map(card => {
-      if(card.isReversed){
+      if (card.isReversed) {
         return {
           name: card.nameReversed,
           arcana: card.arcana,
@@ -49,7 +49,7 @@ export default class App extends Component {
           description: card.description,
           image: card.imageReversed,
         }
-      }else{
+      } else {
         return {
           name: card.name,
           arcana: card.arcana,
@@ -60,6 +60,7 @@ export default class App extends Component {
       }
     })
     newReading.user = this.state.user._id;
+    newReading.reflections = [];
     readingService.saveReading(newReading);
   }
 
@@ -68,18 +69,18 @@ export default class App extends Component {
     getReadingBtn.disabled = true;
     let readingCopy = this.state.reading;
     let deckCopy = this.state.deck;
-    for(let i=0; i<5; i++){
+    for (let i = 0; i < 5; i++) {
       let randidx = this.getCardOrReverse(deckCopy.length + 1);
       let randflip = this.getCardOrReverse(2);
       let cardCopy = deckCopy[randidx];
-      if(randflip){
+      if (randflip) {
         cardCopy.isReversed = true;
       }
       readingCopy.push(cardCopy);
       let removed = deckCopy.splice(randidx, 1);
     }
     this.handleReadingSave(readingCopy);
-    this.setState({reading: readingCopy});
+    this.setState({ reading: readingCopy });
     console.log(this.state.reading)
   }
 
@@ -96,11 +97,13 @@ export default class App extends Component {
     const newReflection = {};
 
     newReflection.user = this.state.user;
+    
+    readingService.addReflection(newReflection);
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     let userId = this.state.user._id;
-    const prevReadings = await readingService.userIndex(userId);
+    const prevReadings = await readingService.pastReadingIndex(userId);
     this.setState({ prevReadings: prevReadings })
   }
 
@@ -109,23 +112,23 @@ export default class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' render={() =>
-            <NavBar 
+            <NavBar
               user={this.state.user}
               handleLogout={this.handleLogout}
             />
           } />
           <Route exact path='/signup' render={({ history }) =>
-            <SignupPage 
+            <SignupPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
-          }/>
+          } />
           <Route exact path='/login' render={({ history }) =>
-            <LoginPage 
+            <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
-          }/>
+          } />
           <Route exact path='/about' render={() =>
             <AboutPage />
           } />
@@ -133,7 +136,7 @@ export default class App extends Component {
             <TarotPage />
           } />
           <Route exact path='/tarot/fivecardlove' render={props =>
-            <FiveCardLovePage 
+            <FiveCardLovePage
               {...props}
               handleFiveCardLove={this.handleFiveCardLove}
               // showHideModal={this.showHideModal}
@@ -142,15 +145,16 @@ export default class App extends Component {
             />
           } />
           <Route exact path='/profile' render={() =>
-            <UserPage 
+            <UserPage
               user={this.state.user}
               prevReadings={this.state.prevReadings}
             />
           } />
           <Route exact path='/profile/readingdetail/:id' render={() =>
-            <ReadingDetailPage 
+            <ReadingDetailPage
               reading={this.state.reading}
               prevReadings={this.state.prevReadings}
+              handleReflectionSubmit={this.handleReflectionSubmit}
             />
           } />
         </Switch>

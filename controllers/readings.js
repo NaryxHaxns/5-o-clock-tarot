@@ -2,7 +2,8 @@ const Reading = require('../models/reading');
 
 module.exports = {
     create,
-    userIndex
+    pastReadingIndex,
+    addReflection
 }
 
 async function create(req, res) {
@@ -13,8 +14,16 @@ async function create(req, res) {
     }
 }
 
-async function userIndex(req, res) {
-    Reading.find({user: req.params.userid}, function(err,readings){
+async function pastReadingIndex(req, res) {
+    Reading.find({ user: req.params.userid }, function (err, readings) {
         res.json(readings);
     })
+}
+
+async function addReflection(req, res) {
+    try {
+        await Reading.reflection.create(req.body);
+    } catch (err) {
+        res.json({ err });
+    }
 }

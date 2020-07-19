@@ -97,7 +97,7 @@ const ReadingDetailPage = (props) => {
                 <div className='comments-leaveOne'>
                     <textarea name="reflection" className='reflection-textbox'></textarea>
                     <br/>
-                    <button className='reflection-submitBtn'>Submit Reflection</button>
+                    <button className='reflection-submitBtn' onClick={() => props.handleReflectionSubmit}>Submit Reflection</button>
                 </div>
             </div>
         </div>

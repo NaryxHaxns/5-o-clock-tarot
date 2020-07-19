@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-//const reflectionSchema = new Schema({
-    //user: String,
-    //body: String
-// },{
-    //timestamps: true
-// })
+const reflectionSchema = new mongoose.Schema({
+    user: String,
+    body: String
+},{
+    timestamps: true
+})
 
 const readingSchema = new mongoose.Schema({
     reading: [{
@@ -14,13 +14,12 @@ const readingSchema = new mongoose.Schema({
         meaning: String,
         description: String,
         image: String,
-        show: Boolean
     }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    // reflections: [reflectionSchema]
+    reflections: [reflectionSchema]
 },{
     timestamps: true
 })
