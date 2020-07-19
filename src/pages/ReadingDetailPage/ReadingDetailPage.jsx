@@ -1,23 +1,27 @@
 import React from 'react';
 import './ReadingDetailPage.css';
 import { Link } from 'react-router-dom';
-import ModalCard from '../../components/ModalCard/ModalCard'
+import ModalCardDetail from '../../components/ModalCardDetail/ModalCardDetail'
 
 const ReadingDetailPage = (props) => {
     let readingId = window.location.pathname.split('/')[3]
     let reading = [];
+    let readingDate = '';
     
     props.prevReadings.map(function (cards){
         if(cards._id === readingId){
             reading = cards.reading;
+            readingDate = cards.createdAt;
         }
-        return reading
+        return
     })
-
+    
+    console.log(readingDate)
+    
     return (
         <div className='ReadingDetailPage'>
             <Link to='/' className='ReadingDetailPage-link'>Home</Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+            &nbsp;&nbsp;|&nbsp;&nbsp;
             <Link to='/profile' className='ReadingDetailPage-link'>Profile</Link>
             <h1>5-Card Love Spread</h1>
             <div>
@@ -45,13 +49,17 @@ const ReadingDetailPage = (props) => {
                     can learn.
             </p>
                 <p>
-                    To begin, click Get your Reading above. You will
-                    then be able to click a card one at a time to see
-                    the card that has been drawn in that given position.
+                    This is your reading from {readingDate}. You can
+                    click a card below one at a time to see the card
+                    that had been drawn in that given position.
                     Consider the description of the card, the divinatory
                     meanings, and the position it appeared in the spread
-                    based on the list above. You will have an opportunity
-                    to reflect upon this reading on your profile page.
+                    based on the list above. Below you can leave Reflections
+                    on this reading. This is an opportunity to journal
+                    what you feel the cards are telling you. These will
+                    be logged by date so that you may look back on
+                    your prior Reflections and see how accurate you or
+                    the cards were as things came to pass.
             </p>
             </div>
             <br />
@@ -64,15 +72,25 @@ const ReadingDetailPage = (props) => {
                             {idx + 1}
                             <div className='tarotCard' style={{ backgroundImage: `url(${card.image})` }}></div>
                             <div className={showHideClassName}>
-                                <ModalCard
+                                <ModalCardDetail
                                     card={card}
-                                    showHideModal={props.showHideModal}
+                                    showHideModalDetail={props.showHideModalDetail}
                                 />
                             </div>
-                            <button onClick={() => props.showHideModal(card)}>Card Details</button>
+                            <button onClick={() => props.showHideModalDetail(card)}>Card Details</button>
                         </div>
                     )
                 })}
+            </div>
+            <br/>
+            <div className='commentsLayout'>
+                <h1>Reflections</h1>
+                <div className='comments-list'>
+
+                </div>
+                <div className='comments-leaveOne'>
+
+                </div>
             </div>
         </div>
     )

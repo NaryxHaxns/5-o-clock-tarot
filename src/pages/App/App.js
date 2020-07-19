@@ -48,7 +48,7 @@ export default class App extends Component {
           meaning: card.meaningReversed,
           description: card.description,
           image: card.imageReversed,
-          show: true
+          show: false
         }
       }else{
         return {
@@ -57,7 +57,7 @@ export default class App extends Component {
           meaning: card.meaning,
           description: card.description,
           image: card.image,
-          show: true
+          show: false
         }
       }
     })
@@ -97,6 +97,26 @@ export default class App extends Component {
     readingCopy.splice(idx, 0, cardCopy[0])
     this.setState({ reading: readingCopy })
   }
+
+  showHideModalDetail = (card) => {
+    let prevReadingsCopy = this.state.prevReadings
+    let cardCopy = card;
+    if(cardCopy.show){
+      cardCopy.show = false;
+    }else{
+      cardCopy.show = true
+    }
+    console.log(prevReadingsCopy)
+    // prevReadingsCopy.map(function (reading){
+    //   prevReadingsCopy[reading].reading.map(function (readingCard){
+    //     if(cardCopy._id === readingCard._id){
+    //       prevReadingsCopy[reading].reading[readingCard].splice(readingCard, 1, cardCopy);
+    //     };
+    //   });
+    // });
+    this.setState({ prevReadings: prevReadingsCopy });
+  };
+
 
   handleCardFlip = (card) => {
     let readingCopy = this.state.reading;
@@ -158,8 +178,7 @@ export default class App extends Component {
           } />
           <Route exact path='/profile/readingdetail/:id' render={() =>
             <ReadingDetailPage 
-              showHideModal={this.showHideModal}
-              handleCardFlip={this.handleCardFlip}
+            showHideModalDetail={this.showHideModalDetail}
               reading={this.state.reading}
               prevReadings={this.state.prevReadings}
             />
