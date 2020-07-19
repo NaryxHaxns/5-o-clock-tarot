@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const UserPage = (props) => {
         const readingDetailBtns = props.prevReadings.map(function (reading, idx) {
             return(
-                <div id={idx + 1} key={idx + 1}>
+                <div className='pastReading-listItem' id={idx + 1} key={idx + 1}>
                 {reading.createdAt}
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 <Link to={`/profile/readingdetail/${props.prevReadings[idx]._id}`} className='ProfilePage-PastReadingLink'>Reading Detail</Link>

@@ -48,7 +48,6 @@ export default class App extends Component {
           meaning: card.meaningReversed,
           description: card.description,
           image: card.imageReversed,
-          show: false
         }
       }else{
         return {
@@ -57,7 +56,6 @@ export default class App extends Component {
           meaning: card.meaning,
           description: card.description,
           image: card.image,
-          show: false
         }
       }
     })
@@ -85,19 +83,6 @@ export default class App extends Component {
     console.log(this.state.reading)
   }
 
-  showHideModal = (card) => {
-    let readingCopy = this.state.reading;
-    let idx = readingCopy.indexOf(card);
-    let cardCopy = readingCopy.splice(idx, 1);
-    if(card.show === true){
-      cardCopy[0].show = false;
-    } else if(card.show === false){
-      cardCopy[0].show = true;
-    }
-    readingCopy.splice(idx, 0, cardCopy[0])
-    this.setState({ reading: readingCopy })
-  }
-
   handleCardFlip = (card) => {
     let readingCopy = this.state.reading;
     let idx = readingCopy.indexOf(card);
@@ -105,6 +90,12 @@ export default class App extends Component {
     cardCopy[0].isFlipped = true;
     readingCopy.splice(idx, 0, cardCopy[0])
     this.setState({ reading: readingCopy })
+  }
+
+  handleReflectionSubmit = () => {
+    const newReflection = {};
+
+    newReflection.user = this.state.user;
   }
 
   async componentDidMount(){
@@ -145,7 +136,7 @@ export default class App extends Component {
             <FiveCardLovePage 
               {...props}
               handleFiveCardLove={this.handleFiveCardLove}
-              showHideModal={this.showHideModal}
+              // showHideModal={this.showHideModal}
               handleCardFlip={this.handleCardFlip}
               reading={this.state.reading}
             />

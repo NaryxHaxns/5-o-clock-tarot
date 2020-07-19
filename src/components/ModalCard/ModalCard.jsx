@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalCard.css';
 
-const ModalCard = ({ showHideModal, card }) => {
+const ModalCard = ({ setIsShowing, card }) => {
     let cardView = card.isReversed ?
     <div>
         <h3>{card.nameReversed}</h3>
@@ -23,7 +23,7 @@ const ModalCard = ({ showHideModal, card }) => {
         <div>
             <section className='modal-main'>
                 {cardView}
-                <button onClick={() => showHideModal(card)}>Close</button>
+                <button onClick={() => setIsShowing(false)}>Close</button>
             </section>
         </div>
     )

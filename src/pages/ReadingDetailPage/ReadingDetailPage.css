@@ -70,3 +70,12 @@
     left:50%;
     transform: translate(-50%,-50%);
 }
+
+.reflection-textbox {
+    width: 50%;
+    height: 150px;
+}
+
+.reflection-submitBtn {
+    margin: 20px;
+}

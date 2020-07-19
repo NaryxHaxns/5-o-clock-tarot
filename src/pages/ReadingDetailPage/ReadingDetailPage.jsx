@@ -80,7 +80,6 @@ const ReadingDetailPage = (props) => {
                             <div className={showHideClassName}>
                                 <ModalCardDetail
                                     card={card}
-                                    showHideModalDetail={props.showHideModalDetail}
                                     setIsShowing={setIsShowing}
                                 />
                             </div>
@@ -93,10 +92,12 @@ const ReadingDetailPage = (props) => {
             <div className='commentsLayout'>
                 <h1>Reflections</h1>
                 <div className='comments-list'>
-
+                    
                 </div>
                 <div className='comments-leaveOne'>
-
+                    <textarea name="reflection" className='reflection-textbox'></textarea>
+                    <br/>
+                    <button className='reflection-submitBtn'>Submit Reflection</button>
                 </div>
             </div>
         </div>

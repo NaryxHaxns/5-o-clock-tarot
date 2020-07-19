@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
-//embedded comments schema
+//const reflectionSchema = new Schema({
+    //user: String,
+    //body: String
+// },{
+    //timestamps: true
+// })
 
 const readingSchema = new mongoose.Schema({
     reading: [{
@@ -15,9 +20,7 @@ const readingSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    // comments: [{
-        //commentsSchema
-    // }]
+    // reflections: [reflectionSchema]
 },{
     timestamps: true
 })
