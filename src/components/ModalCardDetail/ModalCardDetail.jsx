@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalCardDetail.css';
 
-const ModalCardDetail = ({ showHideModalDetail, card }) => {
+const ModalCardDetail = ({ setIsShowing, card }) => {
     return(
         <div>
             <section className='modal-main'>
@@ -11,8 +11,8 @@ const ModalCardDetail = ({ showHideModalDetail, card }) => {
                     <img src={card.image} alt="Card Image" className='modalCardImg'/>
                     <p>{card.meaning}</p>
                     <p>{card.description}</p>
-                </div>;
-                <button onClick={() => showHideModalDetail(card)}>Close</button>
+                </div>
+                <button onClick={() => setIsShowing(false)}>Close</button>
             </section>
         </div>
     )

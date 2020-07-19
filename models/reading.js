@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//embedded comments schema
+
 const readingSchema = new mongoose.Schema({
     reading: [{
         name: String,
@@ -12,7 +14,10 @@ const readingSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    // comments: [{
+        //commentsSchema
+    // }]
 },{
     timestamps: true
 })

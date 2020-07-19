@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ReadingDetailPage.css';
 import { Link } from 'react-router-dom';
 import ModalCardDetail from '../../components/ModalCardDetail/ModalCardDetail'
@@ -7,6 +7,9 @@ const ReadingDetailPage = (props) => {
     let readingId = window.location.pathname.split('/')[3]
     let reading = [];
     let readingDate = '';
+
+    const [isShowing, setIsShowing] = useState(false);
+    const [currentCard, setCurrentCard] = useState({});
     
     props.prevReadings.map(function (cards){
         if(cards._id === readingId){
@@ -16,7 +19,10 @@ const ReadingDetailPage = (props) => {
         return
     })
     
-    console.log(readingDate)
+    const handleClick = (card) => {
+        setCurrentCard(card)
+        setIsShowing(true);
+    }
     
     return (
         <div className='ReadingDetailPage'>
@@ -65,7 +71,7 @@ const ReadingDetailPage = (props) => {
             <br />
             <div className='cardLayout'>
                 {reading.map(function (card, idx) {
-                    const showHideClassName = card.show ? 'display-block' : 'display-none';
+                    const showHideClassName = currentCard._id === card._id && isShowing ? 'display-block' : 'display-none';
 
                     return (
                         <div id={`card_${idx + 1}`} key={`card_${idx + 1}`}>
@@ -75,9 +81,10 @@ const ReadingDetailPage = (props) => {
                                 <ModalCardDetail
                                     card={card}
                                     showHideModalDetail={props.showHideModalDetail}
+                                    setIsShowing={setIsShowing}
                                 />
                             </div>
-                            <button onClick={() => props.showHideModalDetail(card)}>Card Details</button>
+                            <button onClick={() => handleClick(card)}>Card Details</button>
                         </div>
                     )
                 })}

@@ -6,6 +6,9 @@ module.exports = {
 }
 
 async function create(req, res) {
+    const newReading = {
+        ...req.body, 
+    }
     try {
         await Reading.create(req.body);
     } catch (err) {
