@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ReadingDetailPage.css';
 import { Link } from 'react-router-dom';
 import ModalCardDetail from '../../components/ModalCardDetail/ModalCardDetail'
+import ReflectionForm from '../../components/ReflectionForm/ReflectionForm';
 
 const ReadingDetailPage = (props) => {
     let readingId = window.location.pathname.split('/')[3]
@@ -16,14 +17,14 @@ const ReadingDetailPage = (props) => {
             reading = cards.reading;
             readingDate = cards.createdAt;
         }
-        return
+        return reading;
     })
     
     const handleClick = (card) => {
         setCurrentCard(card)
         setIsShowing(true);
     }
-    
+    console.log(reading)
     return (
         <div className='ReadingDetailPage'>
             <Link to='/' className='ReadingDetailPage-link'>Home</Link>
@@ -89,16 +90,12 @@ const ReadingDetailPage = (props) => {
                 })}
             </div>
             <br/>
-            <div className='commentsLayout'>
+            <div className='ReflectionsLayout'>
                 <h1>Reflections</h1>
-                <div className='comments-list'>
+                <div className='Reflections-list'>
                     
                 </div>
-                <div className='comments-leaveOne'>
-                    <textarea name="reflection" className='reflection-textbox'></textarea>
-                    <br/>
-                    <button className='reflection-submitBtn' onClick={() => props.handleReflectionSubmit}>Submit Reflection</button>
-                </div>
+                <ReflectionForm />
             </div>
         </div>
     )

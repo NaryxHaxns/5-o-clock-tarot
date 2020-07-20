@@ -9,20 +9,21 @@ module.exports = {
 async function create(req, res) {
     try {
         await Reading.create(req.body);
+        const readings = await Reading.find({ user: req.body.user._id });
+        res.json(readings);
     } catch (err) {
         res.json({ err });
     }
 }
 
 async function pastReadingIndex(req, res) {
-    Reading.find({ user: req.params.userid }, function (err, readings) {
+    const readings = await Reading.find({ user: req.params.userid });
         res.json(readings);
-    })
 }
 
 async function addReflection(req, res) {
     try {
-        await Reading.reflection.create(req.body);
+        await Reading.reflection(req.body);
     } catch (err) {
         res.json({ err });
     }

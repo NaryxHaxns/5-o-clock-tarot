@@ -74,6 +74,8 @@
 .reflection-textbox {
     width: 50%;
     height: 150px;
+    background: rgba(17, 4, 69, 0.6);
+    color: aqua;
 }
 
 .reflection-submitBtn {

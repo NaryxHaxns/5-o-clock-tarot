@@ -1,3 +1,5 @@
+import tokenService from "./tokenService";
+
 const BASE_URL = '/api/readings/';
 
 export default {
@@ -9,7 +11,8 @@ export default {
 function saveReading(newReading) {
     return fetch(BASE_URL + 'create', {
         method: 'POST',
-        headers: new Headers({ 'Content-Type': 'application/json' }),
+        headers: new Headers({ 'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()}),
         body: JSON.stringify(newReading)
     })
         .then(res => {
@@ -20,13 +23,18 @@ function saveReading(newReading) {
 }
 
 function pastReadingIndex(userId) {
-    return fetch(BASE_URL + 'pastReadingIndex/' + userId).then(res => res.json());
+    return fetch(BASE_URL + 'pastReadingIndex/' + userId, {
+        headers: new Headers({ 'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()}),
+    })
+    .then(res => res.json());
 }
 
 function addReflection(newReflection) {
     return fetch(BASE_URL + 'addReflection', {
         method: 'POST',
-        headers: new Headers({ 'Content-Type': 'application/json' }),
+        headers: new Headers({ 'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()}),
         body: JSON.stringify(newReflection)
     })
     .then(res => {

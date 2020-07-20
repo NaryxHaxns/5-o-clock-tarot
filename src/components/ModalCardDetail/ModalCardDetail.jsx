@@ -8,7 +8,7 @@ const ModalCardDetail = ({ setIsShowing, card }) => {
                 <div>
                     <h3>{card.name}</h3>
                     <p>{card.arcana}</p>
-                    <img src={card.image} alt="Card Image" className='modalCardImg'/>
+                    <img src={card.image} alt="Card" className='modalCardImg'/>
                     <p>{card.meaning}</p>
                     <p>{card.description}</p>
                 </div>

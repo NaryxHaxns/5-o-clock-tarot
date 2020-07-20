@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import userService from '../../utils/userService';
 import readingService from '../../utils/readingService';
 import cards from '../../constants/RSWDeck';
@@ -24,7 +24,7 @@ export default class App extends Component {
     };
   };
 
-  handleSignupOrLogin = () => {
+  handleGetUser = () => {
     this.setState({ user: userService.getUser() });
   }
 
@@ -34,7 +34,7 @@ export default class App extends Component {
   };
 
   getCardOrReverse(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(max - 1));
   };
 
   handleReadingSave = (readingCopy) => {
@@ -93,17 +93,8 @@ export default class App extends Component {
     this.setState({ reading: readingCopy })
   }
 
-  handleReflectionSubmit = () => {
-    const newReflection = {};
-
-    newReflection.user = this.state.user;
-    
-    readingService.addReflection(newReflection);
-  }
-
   async componentDidMount() {
-    let userId = this.state.user._id;
-    const prevReadings = await readingService.pastReadingIndex(userId);
+    const prevReadings = await readingService.pastReadingIndex(this.state.user._id);
     this.setState({ prevReadings: prevReadings })
   }
 
@@ -120,42 +111,52 @@ export default class App extends Component {
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
               history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+              handleGetUser={this.handleGetUser}
             />
           } />
           <Route exact path='/login' render={({ history }) =>
             <LoginPage
               history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+              handleGetUser={this.handleGetUser}
             />
           } />
           <Route exact path='/about' render={() =>
             <AboutPage />
           } />
           <Route exact path='/tarot' render={() =>
-            <TarotPage />
+            userService.getUser() ?
+              <TarotPage />
+              :
+              <Redirect to='/login' />
           } />
           <Route exact path='/tarot/fivecardlove' render={props =>
-            <FiveCardLovePage
-              {...props}
-              handleFiveCardLove={this.handleFiveCardLove}
-              // showHideModal={this.showHideModal}
-              handleCardFlip={this.handleCardFlip}
-              reading={this.state.reading}
-            />
+            userService.getUser() ?
+              <FiveCardLovePage
+                {...props}
+                handleFiveCardLove={this.handleFiveCardLove}
+                handleCardFlip={this.handleCardFlip}
+                reading={this.state.reading}
+              />
+              :
+              <Redirect to='/login' />
           } />
           <Route exact path='/profile' render={() =>
-            <UserPage
-              user={this.state.user}
-              prevReadings={this.state.prevReadings}
-            />
+            userService.getUser() ?
+              <UserPage
+                user={this.state.user}
+                prevReadings={this.state.prevReadings}
+              />
+              :
+              <Redirect to='/login' />
           } />
           <Route exact path='/profile/readingdetail/:id' render={() =>
-            <ReadingDetailPage
-              reading={this.state.reading}
-              prevReadings={this.state.prevReadings}
-              handleReflectionSubmit={this.handleReflectionSubmit}
-            />
+            userService.getUser() ?
+              <ReadingDetailPage
+                reading={this.state.reading}
+                prevReadings={this.state.prevReadings}
+              />
+              :
+              <Redirect to='/login' />
           } />
         </Switch>
       </div>
