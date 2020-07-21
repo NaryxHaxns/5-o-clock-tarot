@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './ReadingDetailPage.css';
 import { Link } from 'react-router-dom';
+import readingService from '../../utils/readingService';
 import ModalCardDetail from '../../components/ModalCardDetail/ModalCardDetail'
+import ModalDelete from '../../components/ModalDelete/ModalDelete';
 import ReflectionForm from '../../components/ReflectionForm/ReflectionForm';
 
 const ReadingDetailPage = (props) => {
@@ -27,11 +29,22 @@ const ReadingDetailPage = (props) => {
         setIsShowing(true);
     }
 
+    const handleModalDelete = (reflection) => {
+        
+    }
+
     let reflectionsList = readingReflections ?
         readingReflections.map(function (reflection, idx) {
+            let date = new Date(reflection.createdAt);
+            date = date.toLocaleString();
             return(
                 <div className='reflection-indiv' id={`reflection_${idx + 1}`} key={`reflection_${idx + 1}`}>
-                    {reflection.createdAt}
+                    <ModalDelete 
+                        reflection={reflection}
+                        handleModalDelete={handleModalDelete}
+                    />
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    {date}
                     <br/>
                     {reflection.reflection}
                 </div>
@@ -44,6 +57,9 @@ const ReadingDetailPage = (props) => {
             Leave your thoughts in the field below.
         </h3>
         </div>;
+
+        let date = new Date(readingDate)
+        date = date.toLocaleString();
 
     return (
         <div className='ReadingDetailPage'>
@@ -76,7 +92,7 @@ const ReadingDetailPage = (props) => {
                     can learn.
             </p>
                 <p>
-                    This is your reading from {readingDate}. You can
+                    This is your reading from {date}. You can
                     click a card below one at a time to see the card
                     that had been drawn in that given position.
                     Consider the description of the card, the divinatory

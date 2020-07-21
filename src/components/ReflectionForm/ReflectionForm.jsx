@@ -19,7 +19,6 @@ export default class ReflectionForm extends Component{
     }
     
     handleSubmit = async (e) => {
-        console.log(this.state.reading)
         e.preventDefault();
         await readingService.addReflection(this.state);
     }
