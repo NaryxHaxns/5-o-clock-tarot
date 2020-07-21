@@ -15,16 +15,12 @@ const ReadingDetailPage = (props) => {
     const [isShowing, setIsShowing] = useState(false);
     const [currentCard, setCurrentCard] = useState({});
     const [currentReflection, setCurrentReflection] = useState({});
-    
-    props.prevReadings.map(function (cards){
-        if(cards._id === readingId){
-            reading = cards.reading;
-            readingDate = cards.createdAt;
-            readingReflections = cards.reflections;
-        }
-        return reading;
-    })
-    
+        
+    const currentReading = props.prevReadings.find(r => r._id === readingId);
+    if (currentReading) {
+        ({reading, createdAt: readingDate, reflections: readingReflections} = currentReading);
+    }
+
     const handleClick = (card) => {
         setCurrentCard(card)
         setIsShowing(true);
@@ -33,6 +29,7 @@ const ReadingDetailPage = (props) => {
     const handleDeleteClick = (reflection) => {
         setCurrentReflection(reflection)
         setIsShowing(true);
+        setCurrentReflection(readingReflections[0])
     }
 
     const handleModalDelete = (reflection) => {

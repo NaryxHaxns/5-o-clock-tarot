@@ -39,7 +39,6 @@ async function deleteReflection(req,res) {
     try {
         await Reading.findById(req.body.reading, function(err,reading) {
             for(let i=0; i<reading.reflections.length; i++){
-                console.log(reading.reflections[i]._id, req.body._id)
                 if(reading.reflections[i]._id == req.body._id){
                     reading.reflections.splice(i, 1)
                 }
