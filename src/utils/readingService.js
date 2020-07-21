@@ -42,7 +42,7 @@ function addReflection(newReflection) {
         if (res.ok) return res.json();
         throw new Error('Please try again');
     })
-    .then((data) => console.log(data));
+    .then((data) => data);
 }
 
 function deleteReflection(reflection) {
@@ -56,5 +56,5 @@ function deleteReflection(reflection) {
         if (res.ok) return res.json();
         throw new Error('Please try again');
     })
-    .then((data) => console.log(data));
+    .then((data) => data);
 }

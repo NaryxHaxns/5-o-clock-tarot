@@ -15,7 +15,7 @@ const FiveCardLovePage = (props) => {
     return (
         <div className='FiveCardLovePage'>
             <Link to='/' className='FiveCardLovePage-link'>Home</Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+            &nbsp;&nbsp;|&nbsp;&nbsp;
             <Link to='/profile' className='FiveCardLovePage-link'>Profile</Link>
             <h1>5-Card Love Spread</h1>
             <div>

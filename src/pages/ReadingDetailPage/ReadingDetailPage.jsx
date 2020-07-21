@@ -7,20 +7,14 @@ import ModalDelete from '../../components/ModalDelete/ModalDelete';
 import ReflectionForm from '../../components/ReflectionForm/ReflectionForm';
 
 const ReadingDetailPage = (props) => {
-    let readingId = window.location.pathname.split('/')[3]
-    let reading = [];
-    let readingDate = '';
-    let readingReflections = [];
+    let reading = (props.readingDoc && props.readingDoc.reading) || [];
+    let readingDate = (props.readingDoc && props.readingDoc.createdAt) || '';
+    let readingReflections = (props.readingDoc && props.readingDoc.reflections) || [];
 
     const [isShowing, setIsShowing] = useState(false);
     const [currentCard, setCurrentCard] = useState({});
     const [currentReflection, setCurrentReflection] = useState({});
         
-    const currentReading = props.prevReadings.find(r => r._id === readingId);
-    if (currentReading) {
-        ({reading, createdAt: readingDate, reflections: readingReflections} = currentReading);
-    }
-
     const handleClick = (card) => {
         setCurrentCard(card)
         setIsShowing(true);
@@ -29,14 +23,14 @@ const ReadingDetailPage = (props) => {
     const handleDeleteClick = (reflection) => {
         setCurrentReflection(reflection)
         setIsShowing(true);
-        setCurrentReflection(readingReflections[0])
     }
 
-    const handleModalDelete = (reflection) => {
-        readingService.deleteReflection(reflection);
+    const handleModalDelete = async (reflection) => {
+        const updatedReading = await readingService.deleteReflection(reflection);
+        props.handleUpdateReading(updatedReading)
     }
 
-    let reflectionsList = readingReflections ?
+    let reflectionsList = readingReflections.length ?
         readingReflections.map(function (reflection, idx) {
             const showHideClassName = reflection._id === currentReflection._id && isShowing ? 'display-block' : 'display-none';
             let date = new Date(reflection.createdAt);
@@ -143,7 +137,8 @@ const ReadingDetailPage = (props) => {
                     {reflectionsList}
                 </div>
                 <ReflectionForm 
-                    readingId={readingId}
+                    readingId={props.readingDoc._id}
+                    handleUpdateReading={props.handleUpdateReading}
                 />
             </div>
         </div>

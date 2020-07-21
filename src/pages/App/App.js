@@ -93,6 +93,11 @@ export default class App extends Component {
     this.setState({ reading: readingCopy })
   }
 
+  handleUpdateReading = (reading) => {
+    const prevReadings = this.state.prevReadings.map(r => r._id === reading._id ? reading : r);
+    this.setState({ prevReadings });
+  };
+
   async componentDidMount() {
     const prevReadings = await readingService.pastReadingIndex(this.state.user._id);
     this.setState({ prevReadings: prevReadings })
@@ -149,15 +154,25 @@ export default class App extends Component {
               :
               <Redirect to='/login' />
           } />
-          <Route exact path='/profile/readingdetail/:id' render={() =>
+          {/* <Route exact path='/profile/readingdetail/:id' render={() =>
             userService.getUser() ?
               <ReadingDetailPage
-                reading={this.state.reading}
                 prevReadings={this.state.prevReadings}
               />
               :
               <Redirect to='/login' />
-          } />
+          } /> */}
+          <Route exact path='/profile/readingdetail/:id' render={({match}) => {
+            if(!this.state.prevReadings.length) return null;
+            const reading = this.state.prevReadings.find(r => r._id === match.params.id);
+            return userService.getUser() ?
+              <ReadingDetailPage
+                readingDoc={reading}
+                handleUpdateReading={this.handleUpdateReading}
+              />
+              :
+              <Redirect to='/login' />
+          }} />
         </Switch>
       </div>
     );

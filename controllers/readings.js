@@ -24,11 +24,10 @@ async function pastReadingIndex(req, res) {
 
 async function addReflection(req, res) {
     try {
-        await Reading.findById(req.body.reading, function(err,reading) {
-            reading.reflections.push(req.body);
-            reading.save(function(err){
-                res.json(reading);
-            })
+        const reading = await Reading.findById(req.body.reading);
+        reading.reflections.push(req.body);
+        reading.save(function(err){
+            res.json(reading);
         })
     } catch (err) {
         res.json({ err });

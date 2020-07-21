@@ -20,7 +20,8 @@ export default class ReflectionForm extends Component{
     
     handleSubmit = async (e) => {
         e.preventDefault();
-        await readingService.addReflection(this.state);
+        const updatedReading = await readingService.addReflection(this.state);
+        this.props.handleUpdateReading(updatedReading)
     }
 
     render(){
