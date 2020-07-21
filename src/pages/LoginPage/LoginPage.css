@@ -1,7 +1,11 @@
-.form-horizontal {
-    height: 100vh;
-    align-self: center;
+.LoginPage {
+    padding: 20px;
     color: aqua;
+    margin-top: 300px;
+}
+
+.col-sm-12 {
+    margin: 20px;
 }
 
 .LoginPage-link {

@@ -5,7 +5,8 @@ const BASE_URL = '/api/readings/';
 export default {
     saveReading,
     pastReadingIndex,
-    addReflection
+    addReflection,
+    deleteReflection
 }
 
 function saveReading(newReading) {
@@ -36,6 +37,20 @@ function addReflection(newReflection) {
         headers: new Headers({ 'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + tokenService.getToken()}),
         body: JSON.stringify(newReflection)
+    })
+    .then(res => {
+        if (res.ok) return res.json();
+        throw new Error('Please try again');
+    })
+    .then((data) => console.log(data));
+}
+
+function deleteReflection(reflection) {
+    return fetch(BASE_URL + 'deleteReflection', {
+        method: 'DELETE',
+        headers: new Headers({ 'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()}),
+        body: JSON.stringify(reflection)
     })
     .then(res => {
         if (res.ok) return res.json();

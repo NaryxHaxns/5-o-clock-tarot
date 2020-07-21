@@ -85,3 +85,7 @@
 .reflection-indiv {
     margin: 20px;
 }
+
+.reflectionDeleteBtn {
+    display: inline;
+}

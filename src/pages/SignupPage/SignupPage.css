@@ -1,3 +1,14 @@
+.SignupPage {
+    padding: 20px;
+    color: aqua;
+    margin-top: 250px;
+}
+
+.col-sm-12 {
+    margin: 20px;
+}
+
+
 button, .SignupForm-link {
     border: 1px solid aqua;
     background-color: rgb(255,166,91);

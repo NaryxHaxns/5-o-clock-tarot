@@ -22,6 +22,7 @@ const UserPage = (props) => {
             <h1>{props.user.name}</h1>
             <h3>Past Readings:</h3>
             <div className='pastReading-list'>
+                
                 {readingDetailBtns}
             </div>
         </div>

@@ -14,6 +14,7 @@ const ReadingDetailPage = (props) => {
 
     const [isShowing, setIsShowing] = useState(false);
     const [currentCard, setCurrentCard] = useState({});
+    const [currentReflection, setCurrentReflection] = useState({});
     
     props.prevReadings.map(function (cards){
         if(cards._id === readingId){
@@ -29,20 +30,32 @@ const ReadingDetailPage = (props) => {
         setIsShowing(true);
     }
 
+    const handleDeleteClick = (reflection) => {
+        setCurrentReflection(reflection)
+        setIsShowing(true);
+    }
+
     const handleModalDelete = (reflection) => {
-        
+        readingService.deleteReflection(reflection);
     }
 
     let reflectionsList = readingReflections ?
         readingReflections.map(function (reflection, idx) {
+            const showHideClassName = reflection._id === currentReflection._id && isShowing ? 'display-block' : 'display-none';
             let date = new Date(reflection.createdAt);
             date = date.toLocaleString();
+
             return(
                 <div className='reflection-indiv' id={`reflection_${idx + 1}`} key={`reflection_${idx + 1}`}>
-                    <ModalDelete 
-                        reflection={reflection}
-                        handleModalDelete={handleModalDelete}
-                    />
+                    <div className={showHideClassName}>
+                        <ModalDelete 
+                            reflection={reflection}
+                            date={date}
+                            handleModalDelete={handleModalDelete}
+                            setIsShowing={setIsShowing}
+                        />
+                    </div>
+                    <button onClick={() => handleDeleteClick(reflection)}>Remove Reflection</button>
                     &nbsp;&nbsp;|&nbsp;&nbsp;
                     {date}
                     <br/>
@@ -52,14 +65,15 @@ const ReadingDetailPage = (props) => {
         })
         :
         <div className='reflections-NoReflections'>
-        <h3>
-            No Reflections yet. What do you think about this reading?
-            Leave your thoughts in the field below.
-        </h3>
-        </div>;
+            <h3>
+                No Reflections yet. What do you think about this reading?
+                Leave your thoughts in the field below.
+            </h3>
+        </div>
+    ;
 
-        let date = new Date(readingDate)
-        date = date.toLocaleString();
+    let date = new Date(readingDate)
+    date = date.toLocaleString();
 
     return (
         <div className='ReadingDetailPage'>
