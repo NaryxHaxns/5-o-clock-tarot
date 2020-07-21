@@ -7,23 +7,21 @@ export default class ReflectionForm extends Component{
         super(props);
         this.state = {
             user: userService.getUser(),
+            reading: this.props.readingId,
             reflection: ''
         }
     }
-
+        
     handleChange = (e) => {
         this.setState({
-        [e.target.name]: e.target.value
+            [e.target.name]: e.target.value
         });
     }
-
+    
     handleSubmit = async (e) => {
+        console.log(this.state.reading)
         e.preventDefault();
-        try {
-            await readingService.addReflection(this.state);
-        } catch (err) {
-            console.log(err)
-        }
+        await readingService.addReflection(this.state);
     }
 
     render(){

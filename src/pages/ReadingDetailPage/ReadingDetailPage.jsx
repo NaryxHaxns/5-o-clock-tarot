@@ -8,6 +8,7 @@ const ReadingDetailPage = (props) => {
     let readingId = window.location.pathname.split('/')[3]
     let reading = [];
     let readingDate = '';
+    let readingReflections = [];
 
     const [isShowing, setIsShowing] = useState(false);
     const [currentCard, setCurrentCard] = useState({});
@@ -16,6 +17,7 @@ const ReadingDetailPage = (props) => {
         if(cards._id === readingId){
             reading = cards.reading;
             readingDate = cards.createdAt;
+            readingReflections = cards.reflections;
         }
         return reading;
     })
@@ -24,7 +26,25 @@ const ReadingDetailPage = (props) => {
         setCurrentCard(card)
         setIsShowing(true);
     }
-    console.log(reading)
+
+    let reflectionsList = readingReflections ?
+        readingReflections.map(function (reflection, idx) {
+            return(
+                <div className='reflection-indiv' id={`reflection_${idx + 1}`} key={`reflection_${idx + 1}`}>
+                    {reflection.createdAt}
+                    <br/>
+                    {reflection.reflection}
+                </div>
+            )
+        })
+        :
+        <div className='reflections-NoReflections'>
+        <h3>
+            No Reflections yet. What do you think about this reading?
+            Leave your thoughts in the field below.
+        </h3>
+        </div>;
+
     return (
         <div className='ReadingDetailPage'>
             <Link to='/' className='ReadingDetailPage-link'>Home</Link>
@@ -93,9 +113,11 @@ const ReadingDetailPage = (props) => {
             <div className='ReflectionsLayout'>
                 <h1>Reflections</h1>
                 <div className='Reflections-list'>
-                    
+                    {reflectionsList}
                 </div>
-                <ReflectionForm />
+                <ReflectionForm 
+                    readingId={readingId}
+                />
             </div>
         </div>
     )

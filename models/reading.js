@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const reflectionSchema = new mongoose.Schema({
     user: String,
+    reading: String,
     reflection: String
 },{
     timestamps: true
