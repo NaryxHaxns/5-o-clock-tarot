@@ -46,43 +46,43 @@ Signup Page
 ![Signup Page](https://i.imgur.com/asbZxDl.png)
 
 Login Page
-[Login Page](https://i.imgur.com/7xEnuzi.png)
+![Login Page](https://i.imgur.com/7xEnuzi.png)
 
 Welcome Logged-In User Page
-[Welcome Page](https://i.imgur.com/1IAMIA1.png)
+![Welcome Page](https://i.imgur.com/1IAMIA1.png)
 
 History & About Page
-[History & About Page](https://i.imgur.com/9GXTHtv.png)
+![History & About Page](https://i.imgur.com/9GXTHtv.png)
 
 Choose Your Reading Page
-[Choose Your Reading Page](https://i.imgur.com/POKEYtk.png)
+![Choose Your Reading Page](https://i.imgur.com/POKEYtk.png)
 
 Tarot Reading Page
-[Tarot Reading Page](https://i.imgur.com/VtNQn4K.png)
+![Tarot Reading Page](https://i.imgur.com/VtNQn4K.png)
 
 Tarot Reading Page - Dealt Cards
-[Tarot Reading Page - Dealt Cards](https://i.imgur.com/shF5PTD.png)
+![Tarot Reading Page - Dealt Cards](https://i.imgur.com/shF5PTD.png)
 
 Tarot Reading Page - Card Reveal
-[Tarot Reading Page - Card Reveal](https://i.imgur.com/CWRtR9a.png)
+![Tarot Reading Page - Card Reveal](https://i.imgur.com/CWRtR9a.png)
 
 Tarot Reading Page - Card Detail
-[Tarot Reading Page - Card Detail](https://i.imgur.com/TxD2kRH.png)
+![Tarot Reading Page - Card Detail](https://i.imgur.com/TxD2kRH.png)
 
 Profile Page
-[Profile Page](https://i.imgur.com/u7iltTs.png)
+![Profile Page](https://i.imgur.com/u7iltTs.png)
 
 Previous Reading Detail Page
-[Previous Reading Detail Page](https://i.imgur.com/qnHCz5o.png)
+![Previous Reading Detail Page](https://i.imgur.com/qnHCz5o.png)
 
 Previous Reading Detail Page - Reflections
-[Previous Reading Detail Page - Reflections](https://i.imgur.com/L6Wvyde.png)
+![Previous Reading Detail Page - Reflections](https://i.imgur.com/L6Wvyde.png)
 
 Previous Reading Detail Page - Reflections List View
-[Previous Reading Detail Page - Reflections List View](https://i.imgur.com/CQwjxe3.png)
+![Previous Reading Detail Page - Reflections List View](https://i.imgur.com/CQwjxe3.png)
 
 Previous Reading Detail Page - Reflections Confirm Delete
-[Previous Reading Detail Page - Reflections Confirm Delete](https://i.imgur.com/1mRWlA5.png)
+![Previous Reading Detail Page - Reflections Confirm Delete](https://i.imgur.com/1mRWlA5.png)
 
 __________________________________________
 
