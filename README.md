@@ -16,9 +16,9 @@ built a theatrically-related app that aligns with my love
 for and educational background in theater, a merger of
 childhood loves in a minesweeper game that is thematically
 set to the Jabberwocky, as well as a collaborative project
-on a favorite pasttime: gaming. As soon as my mind was set
+on a favorite past-time: gaming. As soon as my mind was set
 on tarot I immediately set to scaffolding the deck. I couldn't
-readily find an API that would suit my needs, therfore I chose
+readily find an API that would suit my needs, therefore I chose
 to begin the process of isolating all properties of the card I
 was going to require, such as the name, arcana, divinatory
 meanings, etc. This deck was a living entity of its own...one

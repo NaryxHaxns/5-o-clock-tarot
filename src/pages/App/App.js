@@ -154,14 +154,6 @@ export default class App extends Component {
               :
               <Redirect to='/login' />
           } />
-          {/* <Route exact path='/profile/readingdetail/:id' render={() =>
-            userService.getUser() ?
-              <ReadingDetailPage
-                prevReadings={this.state.prevReadings}
-              />
-              :
-              <Redirect to='/login' />
-          } /> */}
           <Route exact path='/profile/readingdetail/:id' render={({match}) => {
             if(!this.state.prevReadings.length) return null;
             const reading = this.state.prevReadings.find(r => r._id === match.params.id);
